@@ -25,19 +25,23 @@ sample_dict = {'foo': '36',
                'baz': [9, 6],
                'test': ("value", 150),
                }
-max_lists = [[], [], [], []]
+list_of_numbers = []
+list_of_stirings = []
+list_of_lists = []
+list_of_tuples =[]
 names_of_lists = ['numbers', 'strings', 'lists', 'tuples']
+
 for value in sample_dict.values():
-    if type(value) == int or type(value) == float:
-        max_lists[0].append(value)
-    elif type(value) == str:
-        max_lists[1].append(value)
-    elif type(value) == list:
-        max_lists[2].append(value)
-    elif type(value) == tuple:
-        max_lists[3].append(value)
+    if isinstance(value, int) or isinstance(value, float):
+        list_of_numbers.append(value)
+    elif isinstance(value, str):
+        list_of_stirings.append(value)
+    elif isinstance(value, list):
+        list_of_lists.append(value)
+    elif isinstance(value, tuple):
+        list_of_tuples.append(value)
 count = 0
-for elem in max_lists:
+for elem in (list_of_numbers, list_of_stirings, list_of_lists, list_of_tuples):
     print(f"Maximum of {names_of_lists[count]} is {maximum_of_list(elem)}")
     print(f"Minimum of {names_of_lists[count]} is {minimum_of_list(elem)}")
     count += 1
