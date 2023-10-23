@@ -1,20 +1,5 @@
 """Write a script to get the maximum and minimum value in a dictionary."""
 
-
-def maximum_of_list(list_of_elements):
-    if list_of_elements:
-        return max(list_of_elements)
-    else:
-        return 'not found'
-
-
-def minimum_of_list(list_of_elements):
-    if list_of_elements:
-        return min(list_of_elements)
-    else:
-        return 'not found'
-
-
 sample_dict = {'foo': '36',
                'bar': [-3],
                'dou': {"value1": 77},
@@ -25,23 +10,20 @@ sample_dict = {'foo': '36',
                'baz': [9, 6],
                'test': ("value", 150),
                }
-list_of_numbers = []
-list_of_stirings = []
-list_of_lists = []
-list_of_tuples =[]
-names_of_lists = ['numbers', 'strings', 'lists', 'tuples']
-
+dict_of_lists = {'numbers': [],
+                 'strings': [],
+                 'lists': [],
+                 'tuples': []}
 for value in sample_dict.values():
     if isinstance(value, int) or isinstance(value, float):
-        list_of_numbers.append(value)
+        dict_of_lists['numbers'].append(value)
     elif isinstance(value, str):
-        list_of_stirings.append(value)
+        dict_of_lists['strings'].append(value)
     elif isinstance(value, list):
-        list_of_lists.append(value)
+        dict_of_lists['lists'].append(value)
     elif isinstance(value, tuple):
-        list_of_tuples.append(value)
-count = 0
-for elem in (list_of_numbers, list_of_stirings, list_of_lists, list_of_tuples):
-    print(f"Maximum of {names_of_lists[count]} is {maximum_of_list(elem)}")
-    print(f"Minimum of {names_of_lists[count]} is {minimum_of_list(elem)}")
-    count += 1
+        dict_of_lists['tuples'].append(value)
+for key, elem in dict_of_lists.items():
+    if elem:
+        print(f"Maximum of {key} is {max(elem)}")
+        print(f"Minimum of {key} is {min(elem)}")
