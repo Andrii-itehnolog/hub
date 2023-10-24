@@ -10,7 +10,7 @@ counter = 0
 for i in list_of_tuples:
     if i:
         temp_list = list(i)
-        temp_list[ - 1] = value_for_replacement
+        temp_list[ -1] = value_for_replacement
         list_of_tuples[counter] = tuple(temp_list)
     counter += 1
 print(f'New list of tuples is:\n{list_of_tuples}')
