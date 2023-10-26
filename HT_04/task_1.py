@@ -11,11 +11,11 @@ while True:
     try:
         first_number = int(first_number)
         second_number = int(second_number)
-    except Exception:
+    except ValueError:
         try:
             first_number = float(first_number)
             second_number = float(second_number)
-        except Exception:
+        except ValueError:
             print("Incorrect input! Please try again!")
         else:
             break
