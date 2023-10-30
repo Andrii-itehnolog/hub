@@ -11,16 +11,16 @@ def checking_is_number(number):
         try:
             number = float(number)
         except ValueError:
-            print("Incorrect input!")
+            print("Input is not a number!!!")
         else:
             return number
     else:
         return number
 
 
-def  area_of_square(number):
+def area_of_square(number):
     return number ** 2
-
+    
 
 def user_input():
     number = input("Please enter number: ")
@@ -28,9 +28,12 @@ def user_input():
 
 
 def format_output():
-    number = user_input()
-    number = checking_is_number(number)
-    area = area_of_square(number)
+    try:
+        number = user_input()
+        number = checking_is_number(number)
+        area = area_of_square(number)
+    except TypeError:
+        return f"Please start again!!"
     return f"Area of square with side {number} is {area}"
 
 

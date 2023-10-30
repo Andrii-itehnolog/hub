@@ -10,12 +10,13 @@ def get_season(number_of_month):
         "summer": (6, 7, 8),
         "autumn": (9, 10, 11)
     }
-    if number_of_month in range(1, 13):
-        for key, value in season_dict.items():
-            if number_of_month in value:
-                return key
-    else:
+    if number_of_month not in range(1, 13):
         return "Wrong input! Value must be only number between 1 and 12!"
+    for key, value in season_dict.items():
+        if number_of_month in value:
+            return key
+
+        
 
 
 if __name__ == "__main__":

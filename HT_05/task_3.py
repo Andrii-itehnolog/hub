@@ -10,7 +10,7 @@
 def comparison_two_numbers(x, y):
     if x > y:
         return f"{x} is greater then {y}  by {x - y}"
-    elif  x < y:
+    elif x < y:
         return f"{y} is greater then {x}  by {y - x}"
     else:
         return f"{x} is equals {y}"
@@ -28,7 +28,8 @@ if __name__ == "__main__":
             second_number = float(second_number)
         except ValueError:
             print("Incorrect input!")
-        else:
-            print(comparison_two_numbers(first_number, second_number))
-    else:
+    try:
         print(comparison_two_numbers(first_number, second_number))
+    except Exception:
+        print("Please start again!!")
+
