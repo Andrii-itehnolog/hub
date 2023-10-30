@@ -16,10 +16,10 @@ class SpecificError(Exception):
 
 try:
     number = input("Enter number: ")
-    raise SpecificError
+    raise SpecificError()
 except SpecificError as er:
     try:
-        raise CustomError
+        raise CustomError()
     except CustomError as e:
         print(f"Error: {e}")    
     print(f"Error: {er}")
