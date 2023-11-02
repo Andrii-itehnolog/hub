@@ -12,5 +12,6 @@ def shift_func(data_list, shift):
 
 
 if __name__ == "__main__":
-    print(shift_func([1, 2, 3, 4, 5, 6, 7], shift=2))  
-    print(shift_func([1, 2, 3, 4, 5, 6, 7], shift=-3))  
+    example_list = [1, 2, 3, 4, 5, 6, 7]
+    print(shift_func(example_list, shift=2))  
+    print(shift_func(example_list, shift=-3))  
