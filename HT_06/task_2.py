@@ -18,7 +18,7 @@ def bank(start_amount, years, percents=10):
             print("Incorrect input!")
     for i in range(years):
         income = start_amount * percents/100
-        start_amount = start_amount + income
+        start_amount +=  income
     print(f"Your current state of bank account is {start_amount:.2f}")    
     return round(start_amount, 2)
 
