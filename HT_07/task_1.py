@@ -21,21 +21,23 @@ def check_password(username, password, silent=False):
         ("Kateryna", "Password_4"),
         ("Olena", "Password_5")
     ]
-    for user in user_list:
-        try:
-            if username ==  user[0] and password == user[1]:
+    try:
+        for user in user_list:
+            if username == user[0] and password == user[1]:
                 return True
-            elif silent:
-                return False
-            else:
-                raise LoginException()
-        except LoginException as e:
-            return e
+        if silent:
+            return False
+        else:
+            raise LoginException()
+    except LoginException as e:
+        return e
     
 
 if __name__ == "__main__":
     print(check_password("Andrii", "Password_1", True))
     print(check_password("Andri", "Password_1", True))
     print(check_password("Andrii", "Password_2", True))
-    print(check_password("Andri", "Password_1"))
+    print(check_password("Kateryna", "Password_"))
+    print(check_password("Olena", "Password_5"))
+
 
