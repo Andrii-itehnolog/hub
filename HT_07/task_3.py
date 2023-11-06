@@ -76,14 +76,13 @@ def valid_user(username, password):
 
     
 if __name__ == "__main__":
-   user_dict = {
-        "Andrii": "Password1",
-        "Serhii": "Password",
-        "Ol": "Password_3",
-        "Kateryna": "password4",
-        "Olena": "PASSWORD5"
-    }
-   for username, password in user_dict.items(): 
-      print(valid_user(username, password))
-
+    user_list = [
+        ("Andrii", "Password1"),
+        ("Serhii", "Password"),
+        ("Ol", "Password_3"),
+        ("Kateryna", "password4"),
+        ("Olena", "PASSWORD5")
+    ]
+    for user in user_list:
+        print(valid_user(user[0], user[1]))
       

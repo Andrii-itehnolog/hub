@@ -14,22 +14,23 @@ class LoginException(Exception):
 
 
 def check_password(username, password, silent=False):
-    user_dict = {
-        "Andrii": "Password_1",
-        "Serhii": "Password_2",
-        "Oleg": "Password_3",
-        "Kateryna": "Password_4",
-        "Olena": "Password_5"
-    }
-    try:
-        if username in  user_dict .keys() and password == user_dict[username]:
-            return True
-        elif silent:
-            return False
-        else:
-            raise LoginException()
-    except LoginException as e:
-        return e
+    user_list = [
+        ("Andrii", "Password_1"),
+        ("Serhii", "Password_2"),
+        ("Oleg", "Password_3"),
+        ("Kateryna", "Password_4"),
+        ("Olena", "Password_5")
+    ]
+    for user in user_list:
+        try:
+            if username ==  user[0] and password == user[1]:
+                return True
+            elif silent:
+                return False
+            else:
+                raise LoginException()
+        except LoginException as e:
+            return e
     
 
 if __name__ == "__main__":
