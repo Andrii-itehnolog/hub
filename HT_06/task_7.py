@@ -24,5 +24,5 @@ def count_elements(input_data):
 
 
 if __name__ == "__main__":
-    example_list = [1, 1, 'foo', [1, 2], True, 2.6, 'foo', "1", [1, 2], 5, "gg", False, (2, 3), 2.6, "False", (2, 3),"True", None , "None", {1: "test"}, 0 , False]
+    example_list = [1, 1, 'foo', [1, 2], "None", True, 2.6, 'foo', "1", [1, 2], 5, "gg", False, (2, 3), 2.6, "False", (2, 3),"True", None ,  {1: "test"}, 0 , False]
     count_elements(tuple(example_list))
