@@ -9,3 +9,15 @@
     "Indivisibilities" -> 2 # 'i' присутнє 7 разів та 's' двічі
     "aA11" -> 2             # 'a' і '1'
     "ABBA" -> 2             # 'A' і 'B' кожна двічі """
+
+
+def count_chars(input_string):
+    input_string = input_string.lower()
+    count = sum(1 for char in set(input_string) if input_string.count(char) > 1 and char.isalnum())
+    return count
+
+
+if __name__ == "__main__":
+    test = "ABBA"
+    result = count_chars(test)
+    print(result)

@@ -13,4 +13,23 @@
    P.P.P.S Не забудьте обробляти невалідні ситуації (аналог range(1, -10, 5)). 
    Подивіться як веде себе стандартний range в таких випадках."""
 
-   
+
+def my_range(start, stop, step=1):
+    if start > stop and step < 0:
+        while start > stop:
+            yield start
+            start += step
+    else:
+        while start < stop:
+            yield start
+            start += step 
+
+
+if __name__ == "__main__":
+    test = (1, 10, 2)
+    # test = (10, 1, -5)
+    # test = (1, -10, 5)
+
+    for i in my_range(*test):
+        print(i)
+

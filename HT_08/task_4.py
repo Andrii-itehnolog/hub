@@ -14,3 +14,22 @@
    1
    ....... """
 
+
+def generator(sequence):
+    length = len(sequence)
+    index = 0
+    while True:
+        yield sequence[index]
+        index = (index + 1) % length
+
+
+if __name__ == "__main__":
+    # test = [1, 2, 3]
+    # test = "Geekhub"
+    test = (1, 2, 3)
+    
+    
+    for elem in generator(test):
+        print(elem)
+
+  

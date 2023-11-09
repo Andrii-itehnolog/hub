@@ -5,3 +5,14 @@
     Приклад:
     array_diff([1, 2], [1]) --> [2]
     array_diff([1, 2, 2, 2, 4, 3, 4], [2]) --> [1, 4, 3, 4]"""
+
+
+def array_diff(list1, list2):
+    return [i for i in list1 if i not in list2]
+
+
+if __name__ == "__main__":
+    # result = array_diff([1, 2], [1])
+    result = array_diff([1, 2, 2, 2, 4, 3, 4, (2, 3), (3, 4), 'test', 'test1'], [2, 3, 5, True, (2, 3), 'test'])
+    print(result) 
+
