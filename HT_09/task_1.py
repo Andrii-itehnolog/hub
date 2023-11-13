@@ -24,15 +24,16 @@ import time
 
 
 if __name__ == "__main__":
-   color_list = {"Red": "Green", "Yellow": "Red", "Green": "Red"}
+   color_list = ["Red", "Yellow", "Green", "Yellow"]
+   color_dict = {"Red": "Green", "Yellow": "Red", "Green": "Red"}
    while True:
-      for first, second  in color_list.items():
-         if first == "Yellow":
+      for item  in color_list:
+         if item == "Yellow":
             for i in range(2):
-               print(f"{first:<8} {second:<8}" )
+               print(f"{item:<8} {color_dict[item]:<8}" )
                time.sleep(1)
          else:
             for i in range(4):
-               print(f"{first:<8} {second:<8}" )
+               print(f"{item:<8} {color_dict[item]:<8}" )
                time.sleep(1)
     

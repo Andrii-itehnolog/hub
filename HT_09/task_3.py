@@ -41,7 +41,7 @@ def login():
         for row in data:
             if username == row["name"] and password == row["password"]:
                 return username
-    print("Wrong username or password!!!")
+    print("\nWrong username or password!!!")
     exit()
  
     
@@ -73,7 +73,10 @@ def deposit(username):
     try:
         amount = float(input("\nPlease, enter amount of money you want to add to your account: "))
     except ValueError:
-        print("Incorrect input\n")
+        print("\nIncorrect input\n")
+        return
+    if amount < 0:
+        print(f"\nAmount must be greater then zero!!!\n")
         return
     balance = check_balance(username) + amount
     with open(f"{username}_balance.txt", "w") as file:
@@ -86,10 +89,13 @@ def withdraw(username):
     try:
         amount = float(input("\nPlease, enter amount of money you want to withdraw from your account: "))
     except ValueError:
-        print("Incorrect input\n")
+        print("\nIncorrect input\n")
         return
     if amount > check_balance(username):
-        print(f"You have only {check_balance(username):.2f} uah on your acount!!!!!!\n")
+        print(f"\nYou have only {check_balance(username):.2f} uah on your account!!!!!!\n")
+        return
+    elif amount < 0:
+        print(f"\nAmount must be greater then zero!!!\n")
         return
     balance = check_balance(username) - amount
     with open(f"{username}_balance.txt", "w") as file:
