@@ -34,8 +34,21 @@ def view_atm_balance():
 
 
 def change_banknotes_quantity():
-    nominal = int(input("Enter the nominal of the banknote: "))
-    quantity = int(input("Enter the new quantity: "))
+    cursor.execute('SELECT nominal FROM banknotes ')
+    banknotes = cursor.fetchall()
+    nominal_list = [x[0] for x in banknotes]
+    try:
+        nominal = int(input("\nEnter the nominal of the banknote: "))
+        if nominal not in nominal_list:
+            print("\nIncorrect input\n")
+            return
+        quantity = int(input("\nEnter the new quantity: "))
+        if quantity < 0:
+            print("\nIncorrect input\n")
+            return
+    except ValueError:
+        print("\nIncorrect input\n")
+        return
     cursor.execute('UPDATE banknotes SET quantity=? WHERE nominal=?', (quantity, nominal))
     conn.commit()
     print("\nBanknote quantity updated successfully.\n")
