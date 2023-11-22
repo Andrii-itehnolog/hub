@@ -89,7 +89,7 @@ def user_menu(username):
             print("\nWrong choice. Try one more time.\n")
 
 
-def ma():
+def main():
     pass
 
 
