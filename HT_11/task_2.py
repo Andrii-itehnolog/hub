@@ -4,11 +4,11 @@
 - Створіть 2 екземпляри класу Person та в кожному з екземплярів створіть атребут 
 profession (його не має інсувати під час ініціалізації)."""
 
+
 class Person:
     def __init__(self, name, age):
         self.name = name
         self.age = age
-        self.profession = None
 
     def show_age(self):
         print(f"{self.name}'s age is {self.age}.")
@@ -17,7 +17,7 @@ class Person:
         print(f"Name: {self.name}")
 
     def show_all_information(self):
-        print(f"Name: {self.name}, Age: {self.age}, Profession: {self.profession}")
+        print(f"Name: {self.name}, Age: {self.age}")
 
 
 person1 = Person(name="Andrii", age=20)
@@ -29,8 +29,10 @@ person2.profession = "Doctor"
 person1.print_name()
 person1.show_age()
 person1.show_all_information()
+print(f"Profession: {person1.profession}")
 
 person2.print_name()
 person2.show_age()
 person2.show_all_information()
+print(f"Profession: {person2.profession}")
 
