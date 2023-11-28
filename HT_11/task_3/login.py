@@ -41,7 +41,7 @@ class UserLogin:
             raise PasswordDigitException()
 
     def valid_password_letters(self, password):
-        if re.search(r".*[A-Z]+[a-z]+.*", password):
+        if re.search(r"(?=.*[a-z])(?=.*[A-Z])", password):
             return True
         else:
             raise PasswordLettersException()

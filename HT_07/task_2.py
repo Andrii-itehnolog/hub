@@ -46,7 +46,7 @@ def valid_password_digit(password):
 
 
 def valid_password_letters(password):
-    if re.search(r".*[A-Z]+[a-z]+.*", password):
+    if re.search(r"(?=.*[a-z])(?=.*[A-Z])", password):
         return True
     else:
         raise PasswordLettersException()
